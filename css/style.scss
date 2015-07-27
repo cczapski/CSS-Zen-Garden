@@ -1,0 +1,653 @@
+@import 'reset';
+@import 'colors';
+@import 'type';
+@import 'medium';
+@import 'large';
+
+html { 
+	box-sizing: border-box; 
+} 
+
+*, *:before, *:after { 
+	box-sizing: inherit; 
+}
+
+$border: 4px solid black;
+
+.page-wrapper {
+	
+	overflow: hidden;
+
+	background: -webkit-linear-gradient(
+	    to bottom, #000, #000 3%, #fff 3%,#fff
+    );
+
+    background: -moz-linear-gradient(
+	    to bottom, #000, #000 3%, #fff 3%,#fff
+    );
+
+    background: -ms-linear-gradient(
+	    to bottom, #000, #000 3%, #fff 3%,#fff
+    );
+
+    background: -o-linear-gradient(
+	    to bottom, #000, #000 3%, #fff 3%,#fff
+    );
+
+	background: linear-gradient(
+	    to bottom, #000, #000 3%, #fff 3%,#fff
+    );
+  	
+  	background-size: 100% 200px;
+}
+
+@keyframes rfade {
+	0%, 50% {
+		background-color: $red;
+		border: $border;
+		color: $red;
+	}
+
+	100% {
+		background-color: white;
+	}
+}
+
+@keyframes yfade {
+	0%, 50% {
+		background-color: $yellow;
+		color: $yellow;
+	}
+
+	100% {
+		background-color: white;
+	}
+}
+
+@keyframes bfade {
+	0%, 50% {
+		background-color: $blue;
+		color: $blue;
+	}
+
+	100% {
+		background-color: white;
+	}
+}
+
+@mixin fade($color, $sec) {
+	background-color: white;
+	animation: $color (($sec*3) + s) ease;
+}
+
+// SECTION INTRO --------------------------------------------
+
+.intro {
+	overflow: hidden;
+
+	div {
+		float: left;
+	}
+}
+
+// HEADER ------------------------
+
+header {
+	overflow: hidden;
+
+	&:before {
+		width: 31%;
+		height: 100px;
+		background: $blue;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+	}
+}
+
+h1 {
+	text-align: right;
+	float: right;
+	padding-bottom: 0.19em;
+	padding-right: 0.1em;
+	width: 70%;
+	border: $border;
+	@include fade(rfade, 1);
+}
+
+h2 {
+	margin-left: 15px;
+	border-right: $border;
+	padding-left: 0.1em;
+	float: left;
+	width: 45%;
+	background: white;
+	border-top: $border;
+	border-left: $border;
+	@include fade(bfade, 1.5);
+
+	&:after {
+		width: 100%;
+		height: 55px;
+		background: $yellow;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+		margin-top: 0.5em;
+	}
+}
+
+// SUMMARY ------------------------
+
+.summary {
+	border-top: $border;
+	overflow: hidden;
+
+	p {
+		width: 50%;
+	}
+
+	p:first-of-type {
+		float: right;
+		border-left: $border;
+		border-right: $border;
+		padding: 0.7em;
+		text-align: right;
+		@include fade(yfade, 2);
+
+
+		&:before {
+			width: 10%;
+			float: right;
+			height: 70px;
+			background: $red;
+			content: "";
+			display: block;
+			position: relative;
+			top: -1em;
+			right: -1em;
+			border: $border;
+		}
+	}
+
+	p:last-of-type {
+		float: left;
+		padding: 0.5em;
+		border-bottom: $border;
+		@include fade(bfade, 2);
+	}
+}
+
+// PREAMBLE ------------------------
+
+.preamble {
+	border-top: $border;
+	padding: 0.8em;
+	padding-top: 0;
+	
+	h3, p {
+		width: 80%;
+		margin: 0 auto;
+		padding: 0.5em;
+		border-left: $border;
+		border-right: $border;
+	}
+
+	h3 {
+		border-bottom: $border;
+		background: white;
+		@include fade(bfade, 3);
+	}
+
+	p {
+		float: right;
+		border-left: $border;
+		padding: 0.7em;
+		@include fade(rfade, 3);
+
+
+		&:first-of-type {
+			border-top: $border;
+		}
+
+		&:last-of-type {
+			border-bottom: $border;
+			padding: 0;
+			padding-left: 0.7em;
+			padding-right: 0.7em;
+
+			&:after {
+				width: 100%;
+				height: 100px;
+				background: $blue;
+				content: "";
+				display: block;
+				position: relative;
+				border: $border;
+				margin-top: 0.5em;
+				right: 1em;
+			}	
+		}
+	}
+} //end of preamble
+
+// MAIN SUPPORTING --------------------------------------------
+
+.main.supporting {
+	border-top: $border;
+	overflow: hidden;
+
+	&:before {
+		width: 40%;
+		height: 150px;
+		background: $yellow;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+	}
+
+	&:after {
+		width: 100%;
+		height: 150px;
+		background: $yellow;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+		overflow: hidden;
+	}
+}
+
+// EXPLANATION ------------------------
+
+
+.explanation {
+	overflow: hidden;
+
+	h3, p {
+		text-align: right;
+	}
+
+	h3 {
+		width: 30%;
+		border-right: $border;
+		border-bottom: $border;
+		float: left;
+		background: white;
+		padding: 0.7em;
+		@include fade(bfade, 5);
+	}
+
+	p {
+		width: 60.7%;
+		float: right;
+		padding: 0.7em;
+		border: $border;
+
+		&:first-of-type {
+			@include fade(yfade, 5);
+		}
+
+		&:last-of-type {
+			@include fade(bfade, 5);
+		}
+
+		&:last-of-type:before {
+			width: 100%;
+			height: 150px;
+			background: $red;
+			content: "";
+			display: block;
+			position: relative;
+			border: $border;
+			padding-top: 0;
+			right: -1em;
+			top: -1em;
+		}
+	}
+}
+
+// PARTICIPATION ------------------------
+
+.participation {
+	overflow: hidden;
+	padding: 0.7em;
+
+	&:after {
+		width: 40%;
+		height: 200px;
+		background: $red;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+		clear: left;
+		right: -1em;
+		top: -1em;
+	}
+
+	h3 {
+		width: 60%;
+		float: right;
+		padding: 0.7em;
+		background: white;
+		border: $border;
+		@include fade(rfade, 6);
+	}
+
+	p {
+		float: left;
+		width: 40%;
+		padding: 0.7em;
+		border: $border;
+
+		&:first-of-type:before {
+			width: 110%;
+			height: 50px;
+			background: $yellow;
+			content: "";
+			display: block;
+			position: relative;
+			border: $border;
+			padding-top: 0;
+			top: -1em;
+		}
+
+		&:first-of-type {
+			padding-top: 0;
+			@include fade(bfade, 6);
+		}
+
+		&:nth-of-type(2) {
+			@include fade(yfade, 6);
+		}
+
+		&:last-of-type {
+			@include fade(bfade, 6);
+		}
+	}
+}
+
+// BENEFITS ------------------------
+
+.benefits {
+	overflow: hidden;
+	border: $border;
+
+	&:before {
+		width: 35%;
+		height: 175px;
+		background: $yellow;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+		float: left;
+		top: -2em;
+	}
+
+	h3, p {
+		padding: 0.7em;
+		background: white;
+		text-align: right;
+	}
+
+	h3 {
+		border: $border;
+		@include fade(bfade, 7);
+	}
+
+	p {
+		width: 70%;
+		float: right;
+		border: $border;
+		@include fade(yfade, 7);
+	}
+
+	p:before {
+		width: 100%;
+		height: 30px;
+		background: $red;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+		float: left;
+		top: -1em;
+		right: -1em;
+	}
+
+}
+
+// REQUIREMENTS ------------------------
+
+.requirements {
+	overflow: hidden;
+
+	&:before {
+		width: 20%;
+		height: 50px;
+		background: $red;
+		content: "";
+		display: block;
+		position: relative;
+		border: $border;
+	}
+
+	h3, p {
+		padding: 0.7em;
+		background: white;
+	}
+
+	h3 {
+		border: $border;
+		@include fade(yfade, 8);
+
+		&:after {
+			width: 45%;
+			height: 100px;
+			background: $blue;
+			content: "";
+			display: block;
+			position: relative;
+			border: $border;
+			float: right;
+			top: -0.85em;
+		}
+	}
+
+	p:nth-of-type(1) {
+		@include fade(rfade, 8);
+		border: $border;
+	}
+
+	p:nth-of-type(2) {
+		width: 70%;
+		border: $border;
+		float: left;
+		padding: 1em;
+		@include fade(bfade, 8);
+
+		&:before {
+			width: 25%;
+			height: 350px;
+			background: $yellow;
+			content: "";
+			display: block;
+			position: relative;
+			bottom: -2em;
+			right: -3em;
+			border: $border;
+			float: right;
+		}
+	}
+
+	p:nth-of-type(3) {
+		width: 45%;
+		float: left;
+		text-align: right;
+		border: $border;
+		@include fade(yfade, 8);
+
+		&:after {
+			width: 10%;
+			height: 80px;
+			background: $blue;
+			content: "";
+			display: block;
+			position: absolute;
+			border: $border;
+		}
+	}
+
+	p:nth-of-type(4) {
+		width: 45%;
+		float: right;
+		border: $border;
+		@include fade(bfade, 8);
+	}
+
+	p:nth-of-type(5) {
+		width: 80%;
+		float: right;
+		clear: both;
+		border: $border;
+		@include fade(bfade, 8);
+	}
+}
+
+// FOOTER ------------------------
+
+footer {
+	overflow: hidden;
+	padding: 1em;
+	border: $border;
+	background: $red;
+	width: 80%;
+	float: right;
+
+	a {
+		background: white;
+		border: $border;
+		padding: 1em;
+		float: left;
+		margin: 0.5em;
+		@include fade(bfade, 8);
+	}	
+}
+
+// ASIDE --------------------------------------------
+
+
+
+// DESIGN SELECTION ----------------
+
+.design-selection {
+	overflow: hidden;
+
+	h3 {
+		background: white;
+		padding: 0.5em;
+		border: $border;
+		width: 70%;
+		@include fade(yfade, 9);
+
+		&:before {
+			width: 30%;
+			height: 40px;
+			background: $red;
+			border: $border;
+			content: "";
+			display: block;
+			position: relative;
+			left: -0.5em;
+			top: -0.5em;
+		}
+	}
+
+	nav {
+		background: white;
+		width: 90%;
+		float: right;
+		border: $border;
+		text-align: right;
+		padding: 1em;
+		margin-top: 1em;
+		@include fade(bfade, 9);
+	}
+}
+
+// ARCHIVES ------------------------
+
+.design-archives {
+	padding: 0.7em;
+	overflow: hidden;
+
+	&:after {
+		width: 50%;
+		height: 80px;
+		background: $red;
+		border: $border;
+		content: "";
+		display: block;
+		position: relative;
+		right: -1em;
+		float: right;
+	}
+
+	nav, h3 {
+		background: white;
+	}
+
+	h3 {
+		border: $border;
+		@include fade(yfade, 10);
+	}
+
+	nav {
+		border: $border;
+		width: 60%;
+		float: right;
+		@include fade(bfade, 10);
+	}
+}
+
+// RESOURCES -----------------------
+
+.zen-resources {
+	overflow: hidden;
+
+	h3, ul {
+		background: white;
+	}
+
+	h3 {
+		padding: 1em;
+		text-align: right;
+		position: relative;
+		border: $border;
+		@include fade(rfade, 11);
+	}
+
+	ul {
+		padding: 0.7em;
+		border: $border;
+		@include fade(bfade, 11);
+
+		&:before {
+			width: 50%;
+			height: 95px;
+			background: $yellow;
+			border: $border;
+			content: "";
+			display: block;
+			position: relative;
+			bottom: -1em;
+			left: -1em;
+			float: left;
+		}
+	}
+}

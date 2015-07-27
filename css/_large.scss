@@ -1,0 +1,14 @@
+@media screen and (min-width: 800px) {
+	h1 {
+		@include font(5);
+	}
+
+	h2 {
+		@include font(4);
+	}
+
+	h3 {
+		@include font(3);
+	}
+
+} //end of media query

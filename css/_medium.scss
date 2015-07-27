@@ -1,0 +1,39 @@
+@media screen and (min-width: 650px) {
+	h1 {
+		@include font(3.5);
+		line-height: 0.8;
+	}
+
+	h2 {
+		@include font(3);
+	}
+
+	h3 {
+		@include font(2);
+	}
+
+	.summary,
+	.preamble,
+	.explanation,
+	.participation,
+	.benefits,
+	.requirements {
+		float: left;
+		width: 60%;
+	}
+
+	.intro, .main.supporting {
+		overflow: hidden;
+	}
+
+	.wrapper {
+		float: right;
+		width: 35%;
+		position: absolute;
+		top: 360px;
+		right: 0;
+	}
+
+	
+
+} //end of media query
